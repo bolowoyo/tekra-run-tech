@@ -43,14 +43,44 @@ const capabilities = [
   },
 ];
 
-const partners = ["Cisco", "Check Point", "Microsoft", "AWS", "Tanium"];
+const partners = [
+  {
+    name: "Cisco",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/cisco.svg",
+  },
+  {
+    name: "Check Point",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/checkpoint.svg",
+  },
+  {
+    name: "Microsoft",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/microsoft.svg",
+  },
+  {
+    name: "AWS",
+    logo:
+      "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/amazonwebservices.svg",
+  },
+  {
+    name: "Tanium",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tanium.svg",
+  },
+];
+
+function TekraMark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`tekra-mark ${className}`} aria-hidden="true">
+      <img src="/tekra-brand-board.png" alt="" />
+    </span>
+  );
+}
 
 export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Tekra Run Technologies home">
-          <span className="brand-mark" aria-hidden="true">TR</span>
+          <TekraMark className="header-mark" />
           <span className="brand-name">Tekra Run</span>
         </a>
 
@@ -74,10 +104,21 @@ export default function Home() {
         </div>
 
         <h1 id="hero-heading">
-          <span>Build what’s</span>
+          <span>Build what&apos;s</span>
           <span className="hero-outline">next. Run it</span>
           <span>without limits.</span>
         </h1>
+
+        <div className="hero-brand-card" aria-label="Tekra Run Technologies brand mark">
+          <span className="hero-brand-label">Tekra identity / 2026</span>
+          <span className="hero-wordmark-crop">
+            <img
+              src="/tekra-brand-board.png"
+              alt="Tekra Run Technologies logo"
+            />
+          </span>
+          <span className="hero-brand-code">TR / TECHNOLOGIES</span>
+        </div>
 
         <div className="hero-bottom">
           <p>
@@ -144,13 +185,17 @@ export default function Home() {
 
         <div className="partner-board">
           {partners.map((partner, index) => (
-            <div className="partner-cell" key={partner}>
+            <div className="partner-cell" key={partner.name}>
               <span className="partner-index">0{index + 1}</span>
-              <strong>{partner}</strong>
+              <span className="partner-logo">
+                <img src={partner.logo} alt="" aria-hidden="true" />
+              </span>
+              <strong>{partner.name}</strong>
             </div>
           ))}
           <div className="partner-cell partner-cell-accent">
             <span className="partner-index">∞</span>
+            <TekraMark className="ecosystem-mark" />
             <strong>One<br />ecosystem</strong>
           </div>
         </div>
@@ -185,11 +230,11 @@ export default function Home() {
         <div className="contact-layout">
           <h2 id="contact-heading">
             Complex challenge?
-            <span> Let’s make it clear.</span>
+            <span> Let&apos;s make it clear.</span>
           </h2>
           <p>
             Bring us the problem that keeps getting pushed to tomorrow.
-            We’ll help you find the path forward.
+            We&apos;ll help you find the path forward.
           </p>
           <a className="contact-link" href="#top">
             Connect with Tekra
@@ -200,7 +245,7 @@ export default function Home() {
 
       <footer>
         <a className="brand footer-brand" href="#top">
-          <span className="brand-mark" aria-hidden="true">TR</span>
+          <TekraMark className="footer-mark" />
           <span className="brand-name">Tekra Run Technologies</span>
         </a>
         <p>Data. Cloud. Software. Security. Operations.</p>
