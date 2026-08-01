@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element -- Vinext serves these local brand assets directly. */
+
 const capabilities = [
   {
     number: "01",
@@ -46,24 +48,23 @@ const capabilities = [
 const partners = [
   {
     name: "Cisco",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/cisco.svg",
+    logo: "/partners/cisco.svg",
   },
   {
     name: "Check Point",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/checkpoint.svg",
+    logo: "/partners/check-point.svg",
   },
   {
     name: "Microsoft",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/microsoft.svg",
+    logo: "/partners/microsoft.svg",
   },
   {
     name: "AWS",
-    logo:
-      "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/amazonwebservices.svg",
+    logo: "/partners/aws.svg",
   },
   {
     name: "Tanium",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tanium.svg",
+    logo: "/partners/tanium.svg",
   },
 ];
 
