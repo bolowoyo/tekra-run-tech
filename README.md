@@ -25,9 +25,11 @@ npm run test:hostinger
 
 The project intentionally supports two build targets:
 
-- `npm run build` creates the server/Worker output used by OpenAI Sites.
-- `npm run build:hostinger` creates and validates a static website in
+- `npm run build` creates and validates the Hostinger static website in
   `dist/client`. A successful build always contains `dist/client/index.html`.
+- `npm run build:sites` creates the server/Worker output used by OpenAI Sites.
+- `npm run build:hostinger` is an explicit alias for the default Hostinger
+  build.
 
 Do not publish the ordinary `dist` directory as a static site. That build has
 `client` and `server` subfolders but no root `index.html`, so a standard web
@@ -43,7 +45,7 @@ Connect Hostinger to the repository and use these settings:
 | Branch | `main` |
 | Node version | `22.x` |
 | Root directory | `./` |
-| Build command | `npm run build:hostinger` |
+| Build command | `npm run build` |
 | Package manager | `npm` |
 | Output directory | `dist/client` |
 
